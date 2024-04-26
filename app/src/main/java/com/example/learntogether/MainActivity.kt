@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TutorialText(title: String, content: String, modifier: Modifier = Modifier) {
     Column(
-        verticalArrangement = Arrangement.Center
+        modifier = Modifier.padding(8.dp)
     ) {
         Text(
             text = title,
@@ -66,17 +66,17 @@ fun TutorialText(title: String, content: String, modifier: Modifier = Modifier) 
 @Composable
 fun TutorialPage(title: String, content: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.bg_compose_background)
-    Box(modifier) {
+    Column(modifier) {
         Image(
             painter = image,
             contentDescription = null,
-
             alpha = 0.8F
         )
         TutorialText(
             title = title,
             content = content,
-            modifier = Modifier.fillMaxWidth())
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
 
