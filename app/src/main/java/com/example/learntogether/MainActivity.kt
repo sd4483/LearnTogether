@@ -13,8 +13,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.learntogether.ui.theme.LearnTogetherTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,16 +42,18 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TutorialText(title: String, content: String, modifier: Modifier = Modifier) {
     Column(
-        verticalArrangement = Arrangement.Center,
-        modifier = Modifier.padding(8.dp)
+        verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = title,
-            modifier = modifier
+            fontSize = 24.sp,
+            textAlign = TextAlign.Left,
+            modifier = modifier.padding(16.dp)
         )
         Text(
             text = content,
-            modifier = modifier
+            textAlign = TextAlign.Justify,
+            modifier = modifier.padding(16.dp)
         )
     }
 }
