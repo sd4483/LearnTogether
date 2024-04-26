@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    TutorialText(
+                    TutorialPage(
                         title = "Jetpack Compose tutorial",
                         content = stringResource(R.string.tutorial_content)
                     )
@@ -72,6 +73,10 @@ fun TutorialPage(title: String, content: String, modifier: Modifier = Modifier) 
             contentScale = ContentScale.Crop,
             alpha = 0.8F
         )
+        TutorialText(
+            title = title,
+            content = content,
+            modifier = Modifier.fillMaxWidth())
     }
 }
 
@@ -79,7 +84,7 @@ fun TutorialPage(title: String, content: String, modifier: Modifier = Modifier) 
 @Composable
 fun TutorialPreview() {
     LearnTogetherTheme {
-        TutorialText(
+        TutorialPage(
             title = "Jetpack Compose tutorial",
             content = stringResource(R.string.tutorial_content)
         )
