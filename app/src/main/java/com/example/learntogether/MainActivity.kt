@@ -70,7 +70,7 @@ fun TutorialPage(title: String, content: String, modifier: Modifier = Modifier) 
         Image(
             painter = image,
             contentDescription = null,
-            contentScale = ContentScale.Crop,
+
             alpha = 0.8F
         )
         TutorialText(
