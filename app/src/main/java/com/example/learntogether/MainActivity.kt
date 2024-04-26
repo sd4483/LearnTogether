@@ -12,6 +12,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.learntogether.ui.theme.LearnTogetherTheme
@@ -26,7 +27,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    TutorialText(
+                        title = "Jetpack Compose tutorial",
+                        content = stringResource(R.string.tutorial_content)
+                    )
                 }
             }
         }
@@ -54,6 +58,9 @@ fun TutorialText(title: String, content: String, modifier: Modifier = Modifier) 
 @Composable
 fun TutorialPreview() {
     LearnTogetherTheme {
-
+        TutorialText(
+            title = "Jetpack Compose tutorial",
+            content = stringResource(R.string.tutorial_content)
+        )
     }
 }
